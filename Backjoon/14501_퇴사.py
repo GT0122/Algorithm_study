@@ -10,23 +10,31 @@ for i in range(n) :
     time.append(t)
     profit.append(p)
 
-day = 0
+day = n-1
+profits = []
+while day >= 0 :
+    today_t, today_p = time[day], profit[day]
+    profits.append(day)
+    if today_t > 1 :
+        temp_profits = set(profits[-today_t:-1])
+        loss = 0
+        for temp in temp_profits :
+            if temp != -1 :
+                loss += profit[temp]
+        if today_p > loss :
+            for i in range(1, today_t) :
+                profits[-(i+1)] = day
+            for temp in temp_profits :
+                if temp != -1 :
+                    while temp in profits and profits.index(temp) != -1 :
+                        profits[profits.index(temp)] = -1
+        else :
+            profits[-1] = -1
+    day -= 1
+    
 max_profit = 0
-while (day + 1) < n :
-    today_t = time[day]
-    today_p = profit[day]
-    iscouncel = True
-    if today_t > (n - day + 1) :
-        iscouncel = False
-    elif today_t > 1 :
-        p = sum(profit[day+1:day+today_t])
-        if today_p < p :
-            iscouncel = False
-    if iscouncel :
-        max_profit += today_p
-        day += today_t
-    else :
-        day += 1
-    print(day, max_profit)
+for i in set(profits) :
+    if i != -1 :
+        max_profit += profit[i]
 
 print(max_profit)
