@@ -10,6 +10,7 @@ for i in range(n) :
     time.append(t)
     profit.append(p)
 
+# DP 해결법 참조
 profits = [0 for _ in range(n+1)]
 for i in range(n) :
     t, p = time[i], profit[i]

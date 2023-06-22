@@ -9,20 +9,20 @@ while True :
     if maps[r][c] == 0 :
         maps[r][c] = 2
         count += 1
-        print(r, c)
     
-    d = (d - 1) % 4
-    sr, sc = dir[d]
-    if maps[r+sr][c+sc] == 0 :
-        r += sr
-        c += sc
-        continue
-
+    unclean = False
     for (sr, sc) in dir :
         tr, tc = r + sr, c + sc
-        if tr >= 0 and tr < n and tc >= 0 and tc < m :
-            if maps[tr][tc] == 0 :
-                break
+        if maps[tr][tc] == 0 :
+            unclean = True
+            break
+
+    if unclean :
+        d = (d - 1) % 4
+        sr, sc = dir[d]
+        if maps[r+sr][c+sc] == 0 :
+            r += sr
+            c += sc
     else :
         sr, sc = dir[d]
         if maps[r-sr][c-sc] == 1 :
