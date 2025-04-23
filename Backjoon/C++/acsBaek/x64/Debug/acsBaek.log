@@ -1,3 +1,7 @@
-﻿  5430_AC.cpp
-C:\Users\ParkGyeongtae\source\repos\acsBaek\acsBaek\5430_AC.cpp(43,17): warning C4267: '=': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  acsBaek.vcxproj -> C:\Users\ParkGyeongtae\source\repos\acsBaek\x64\Debug\acsBaek.exe
+﻿  1016_제곱ㄴㄴ수.cpp
+C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\acsBaek\1016_제곱ㄴㄴ수.cpp(17,11): warning C4244: '초기화 중': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\acsBaek\1016_제곱ㄴㄴ수.cpp(24,20): warning C4244: '초기화 중': 'double'에서 '__int64'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\acsBaek\1016_제곱ㄴㄴ수.cpp(36,14): warning C4244: '=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\acsBaek\1016_제곱ㄴㄴ수.cpp(39,10): warning C4244: '+=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\acsBaek\1016_제곱ㄴㄴ수.cpp(59,14): warning C4244: '+=': '__int64'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  acsBaek.vcxproj -> C:\Users\user\source\repos\Algorithm_study\Backjoon\C++\x64\Debug\acsBaek.exe
