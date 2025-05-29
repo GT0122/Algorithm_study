@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include <vector>
 
 using namespace std;
 
@@ -16,54 +15,49 @@ int main() {
 
 	int size = max - min + 1;
 
-	int* vctNum = new int[size];
+	bool* vctNum = new bool[size];
 	for (int i = 0; i < size; i++) {
 		vctNum[i] = 1;
 	}
 
 	long long sqrtMax = floor(sqrt(max));
-	cout << sqrtMax << '\n';
 
-	int* vctIndex = new int[sqrtMax];
-	for (long long i = 0; i < sqrtMax+1; i++) {
+	bool* vctIndex = new bool[sqrtMax];
+	for (int i = 0; i < sqrtMax+1; i++) {
 		vctIndex[i] = 1;
 	}
 
-	long long num;
+	int answer = 0;
+
+	long long num = 0;
 	int t;
+	long long power = 0;
 	for (long long i = 2; i < sqrtMax+1; i++) {
 		if (vctIndex[i - 2] == 1) {
 			t = i * 2 - 2;
+			power = i * i;
+			
+			if (min % power == 0) {
+				num = min;
+			}
+			else {
+				num = (min / power + 1) * power;
+			}
+
 			while (t <= sqrtMax) {
 				vctIndex[t] = 0;
 				t += i;
 			}
-		}
-	}
 
-	cout << "done\n";
-
-	int index = 1;
-	for (long long i = 2; i < sqrtMax+1; i++) {
-		if (vctIndex[i - 2] == 1) {
-			num = i * i;
-			for (int j = 0; j < num; j++) {
-				if ((min + j) % num == 0) {
-					index = j;
-					break;
+			while (num <= max) {
+				if (num - min >= 0) {
+					vctNum[num - min] = 0;
 				}
-			}
-
-			while (min + index <= max) {
-				vctNum[index] = 0;
-				index += num;
+				num += power;
 			}
 		}
 	}
 
-	cout << "done\n";
-
-	int answer = 0;
 	for (int i = 0; i < size; i++) {
 		answer += vctNum[i];
 	}
