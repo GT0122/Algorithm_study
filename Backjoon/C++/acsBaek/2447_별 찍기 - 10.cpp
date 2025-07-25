@@ -38,7 +38,7 @@ int main() {
 	memset(stars, ' ', sizeof(char) * ((n + 1) * n + 1));
 	stars[0] = '*';
 	stars[(n + 1) * n] = 0;
-
+	
 	search(1, n, stars);
 
 
