@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="2447_별 찍기 - 10.cpp">
+    <ClCompile Include="5430_AC.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>

@@ -1,6 +1,5 @@
 #include <iostream>
 #include <string>
-#include <vector>
 
 using namespace std;
 
@@ -12,30 +11,29 @@ int main() {
 	int t, n;
 	int fIdx, rIdx, len;
 	bool rear = false, error = false;
-	string p, d, result;
-	string* pResult;
+	string p, result = "";
+	char c;
 	int* pInt;
 
 	cin >> t;
-
-	pResult = new string[t];
 
 	for(int i = 0; i < t; i++)
 	{
 		cin >> p;
 		cin >> n;
-		cin >> d;
-
-		d = d.substr(1, d.size() - 2);
+		cin >> c;
 
 		pInt = new int[n];
-
-		for(int j = 0; j < n; j++)
-		{
-			pInt[j] = stoi(d.substr(0, d.find(',')));
-			d = d.substr(d.find(',') + 1);
+		if (n > 0) {
+			for (int j = 0; j < n; j++) {
+				cin >> pInt[j];
+				cin >> c;
+			}
 		}
-		
+		else {
+			cin >> c;
+		}
+
 		rear = false;
 		error = false;
 		fIdx = 0;
@@ -66,10 +64,10 @@ int main() {
 			}
 		}
 
-		result = "";
-
-		if(error)
-			result = "error";
+		if (error)
+		{
+			result += "error";
+		}
 		else
 		{
 			result += '[';
@@ -80,7 +78,7 @@ int main() {
 				{
 					result += to_string(pInt[j]);
 
-					if(j != fIdx + 1)
+					if (j != fIdx)
 						result += ',';
 				}
 			}
@@ -90,22 +88,19 @@ int main() {
 				{
 					result += to_string(pInt[j]);
 
-					if(j != rIdx - 1)
+					if (j != rIdx - 1)
 						result += ',';
 				}
 			}
 			result += ']';
-
-			pResult[i] = result;
 		}
 
-		pResult[i] = result;
+		result += '\n';
 
 		delete[] pInt;
 	}
 
-	for(int i = 0; i < t; i++)
-		cout << pResult[i] << '\n';
+	cout << result;
 
 	return 0;
 }
