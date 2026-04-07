@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="1013_Contact.cpp">
+    <ClCompile Include="1011_Fly me to the Alpha Centauri.cpp">
       <Filter>소스 파일</Filter>
     </ClCompile>
   </ItemGroup>
